@@ -1,0 +1,30 @@
+{% extends "base.html.j2" %}
+
+{% block head %}
+<style type="text/css">
+    .lost {
+        width: 100%;
+    }
+
+    .lost img {
+        display: block;
+        max-height: 75vh;
+        margin: 0 auto;
+    }
+
+    h1 {
+        text-align: center;
+    }
+</style>
+{% endblock head %}
+
+
+{% block content %}
+<div>
+    <h1>Sorry! Couldn't find what you were looking for</h1>
+    <div class="lost">
+        <img src="https://i0.wp.com/www.wagpets.com/wp-content/uploads/2019/10/not-all-that-wander-are-lost-but-I-sure-am.jpg?w=880&ssl=1"
+            \>
+    </div>
+</div>
+{% endblock %}

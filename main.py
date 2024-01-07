@@ -1,12 +1,23 @@
 from fastapi import FastAPI, Request
+from fastapi.exceptions import HTTPException
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from jinja2.exceptions import TemplateNotFound
 
 app = FastAPI()
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
+
+
+@app.exception_handler(TemplateNotFound)
+async def custom_http_exception_handler(request, exc):
+    return templates.TemplateResponse(
+        request=request,
+        name="404.html.j2",
+        status_code=404
+    )
 
 
 @app.get("/", response_class=HTMLResponse)
