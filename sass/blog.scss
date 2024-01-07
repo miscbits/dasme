@@ -1,0 +1,33 @@
+@import 'variables';
+
+.article-head {
+    width: 100%;
+    height: 50vh;
+    background-position: center 50%;
+    background-size: 100%;
+    position: relative;
+    box-shadow: inset 0px -20px 20px -20px $pallete-200, inset 0px 20px 20px -20px $pallete-200;
+    display: flexbox;
+
+    div {
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        display: flex;
+        background-color: rgba(205, 205, 205, .1);
+
+        h1 {
+            background: radial-gradient(rgba(245, 245, 245, .3), rgba(205, 205, 205, .1));
+            border-radius: 5%;
+            padding: 25px;
+            color: $pallete-100;
+            text-align: center;
+            font-size: 3em;
+        }
+    }
+}
+
+.article-content {
+    margin: 0 auto;
+    max-width: 720px;
+}
