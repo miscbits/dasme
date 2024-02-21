@@ -8,6 +8,25 @@ body {
     color: $pallete-600
 }
 
+a.card {
+    color: $pallete-500;
+
+    user-select: none;
+
+    background: $pallete-300;
+    text-decoration: none;
+
+    transition: background .3s ease-out;
+
+    &:hover {
+        background: scale-color($color: $pallete-300, $red: 25%, $green: 25%, $blue: 25%);
+        text-decoration: none;
+
+    }
+
+}
+
+
 .container {
     display: flex;
     justify-content: flex-start;

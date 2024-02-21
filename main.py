@@ -1,5 +1,4 @@
 from fastapi import FastAPI, Request
-from fastapi.exceptions import HTTPException
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -12,6 +11,7 @@ templates = Jinja2Templates(directory="templates")
 
 
 @app.exception_handler(TemplateNotFound)
+@app.exception_handler(404)
 async def custom_http_exception_handler(request, exc):
     return templates.TemplateResponse(
         request=request,
