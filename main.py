@@ -35,3 +35,11 @@ async def blog(request: Request, name: str):
         request=request,
         name=f"blogs/{name}.html.j2",
     )
+
+@app.get("/blog", response_class=HTMLResponse)
+async def blog(request: Request):
+    return templates.TemplateResponse(
+        request=request,
+        name=f"blog.html.j2",
+    )
+
