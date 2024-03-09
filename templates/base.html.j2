@@ -5,7 +5,7 @@
     <title>Wilhem Alcivar</title>
     {% block head %}
     {% endblock %}
-    <link href="/static/style.css" rel="stylesheet">
+    <link href="{{ url_for('static', path='/style.css') }}" rel="stylesheet">
 </head>
 
 <body>
