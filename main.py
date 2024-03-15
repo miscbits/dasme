@@ -36,7 +36,7 @@ async def blog(request: Request, name: str):
 
 
 @app.get("/blog", response_class=HTMLResponse)
-async def blog(request: Request):
+async def blog_index(request: Request):
     return templates.TemplateResponse(
         request=request,
         name=f"blog.html.j2",
