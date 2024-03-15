@@ -14,9 +14,7 @@ templates = Jinja2Templates(directory="templates")
 @app.exception_handler(404)
 async def custom_http_exception_handler(request, exc):
     return templates.TemplateResponse(
-        request=request,
-        name="404.html.j2",
-        status_code=404
+        request=request, name="404.html.j2", status_code=404
     )
 
 
@@ -25,7 +23,7 @@ async def root(request: Request):
     return templates.TemplateResponse(
         request=request,
         name="index.html.j2",
-        context={"message": "Welcome to my space!"}
+        context={"message": "Welcome to my space!"},
     )
 
 
@@ -36,10 +34,10 @@ async def blog(request: Request, name: str):
         name=f"blogs/{name}.html.j2",
     )
 
+
 @app.get("/blog", response_class=HTMLResponse)
 async def blog(request: Request):
     return templates.TemplateResponse(
         request=request,
         name=f"blog.html.j2",
     )
-
